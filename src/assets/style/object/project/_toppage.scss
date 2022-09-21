@@ -1,0 +1,79 @@
+.p-top {
+  background: #fff;
+  .form-right {
+    position: fixed;
+    top: 25px;
+    right: 0;
+  }
+  .p-header {
+    position: fixed;
+    top: 30px;
+    background: #fff;
+    max-width: 1346px;
+    width: 100%;
+    border-radius: 40px;
+    margin-left: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px 66px 3px 35px;
+
+    &_menu {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      a {
+        padding: 0 10px;
+        @include fs(20,27);
+        font-weight: bold;
+        color: #707070;
+      }
+    }
+    &_contact {
+      text-align: center;
+      font-weight: bold;
+      @include fs(18,24);
+      color: #707070;
+
+      .phone-number {
+        a {
+          @include fs(38,51);
+          color: #1F53AD;
+          font-family: futura-pt, sans-serif;
+          font-weight: 500;
+          font-style: normal;
+          display: flex;
+          img {
+            margin-top: 5px;
+            margin-right: 13px;
+          }
+        }
+      }
+    }
+  }
+  
+
+
+
+  .p-topMain {
+    .p-mainVisual {
+      background: url(../images/bg_mv.jpg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      padding: 143px 0 34px;
+
+      &_img {
+        margin-left: 115px;
+      }
+
+      &_btn {
+        margin-top: 45px;
+        margin-left: 133px;
+        .btn02 {
+          margin-left: 38px;
+        }
+      }
+    }
+  }
+}
