@@ -6,7 +6,7 @@
     right: 0;
   }
   .p-header {
-    position: fixed;
+    position: absolute;
     top: 30px;
     background: #fff;
     max-width: 1346px;
@@ -55,6 +55,18 @@
   .section-title {
     h2 {
       text-align: center;
+      position: relative;
+      &::after {
+        content: '';
+        width: 24px;
+        height: 5px;
+        background-color: #FF4141;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
       .ttl-en {
         font-family: futura-pt, sans-serif;
         font-weight: 500;
@@ -131,6 +143,169 @@
       background-repeat: repeat;
       background-size: cover;
       padding: 100px 0 100px 54px;
+
+      .ctn-reason {
+
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding-top: 100px;
+        &_item {
+          max-width: 430px;
+          background: #fff;
+          border-radius: 15px;
+          padding: 50px 23px;
+          box-shadow: 0 0 9px #0000001f;
+          &:nth-child(2) {
+            .number-item {
+              padding: 18px 10px 19px;
+            }
+          }
+        }
+        .number-item {
+          background-color: #FF4141;
+          color: #fff;
+          padding: 23px 10px;
+          border-radius: 50%;
+          max-width: 138px;
+          margin: 0 auto;
+          margin-top: -119px;
+          padding: 24px 2px 45px;
+          .number {
+            @include fs(28,37);
+            font-family: futura-pt, sans-serif;
+            font-weight: 500;
+            font-style: normal;
+          }
+          .text {
+            @include fs(32,32);
+            font-family: noto-sans-cjk-jp,sans-serif;
+            font-weight: 500;
+            font-style: normal;
+          }
+          span {
+            display: block;
+          }
+        }
+
+        .thumb-item {
+        }
+
+        .ctn-item {
+          .ttl-item {
+            color: #FF4141;
+            @include fs(26,40);
+            font-weight: bold;
+            padding: 24px 0 30px;
+          }
+          .description {
+            text-align: left;
+            @include fs(22,40);
+            font-family: noto-sans-cjk-jp,sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 0;
+          }
+        }
+      }
+    }
+
+    .p-flow {
+      background-image: url(../images/bg_flow_pc.png);
+      background-color: #F5F5F5;
+      background-position: top;
+      background-repeat: repeat;
+      background-size: cover;
+      padding: 100px 0 100px 54px;
+
+      .thumb-flow {
+        text-align: center;
+      }
+
+      .btn-flow {
+        display: flex;
+        justify-content: center;
+        padding-top: 55px;
+        .btn01 {
+          margin-right: 65px;
+        }
+        a {
+          display: block;
+        }
+      }
+    }
+
+    .p-feature {
+      background-image: url(../images/bg_feature_pc.jpg);
+      background-color: #F5F5F5;
+      background-position: top center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      padding: 100px 0 100px 54px;
+
+      .section-title {
+        h2 {
+          color: #fff;
+          .ttl-en {
+            color: #fff;
+          }
+        }
+      }
+
+      .ctn-feature {
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        padding-top: 100px;
+
+        &.ctn-feature02 {
+          justify-content: center;
+          padding-top: 72px;
+          .ctn-feature_item {
+            &:first-child {
+              margin-right: 38px;
+            }
+          }
+        }
+
+        &_item {
+          max-width: 428px;
+          background: #fff;
+          border-radius: 15px;
+          box-shadow: 0 0 9px #0000001f;
+          &:nth-child(2) {
+            .number-item {
+              padding: 18px 10px 19px;
+            }
+          }
+        }
+
+        .thumb-item {
+        }
+
+        .ctn-item {
+          padding: 45px 31px 35px 45px;
+          .ttl-item {
+            color: #FF4141;
+            @include fs(26,40);
+            font-weight: bold;
+            padding: 0 0 36px;
+            font-family: noto-sans-cjk-jp,sans-serif;
+            min-height: 116px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          }
+          .description {
+            text-align: left;
+            @include fs(22,40);
+            font-family: noto-sans-cjk-jp,sans-serif;
+            font-weight: 500;
+            font-style: normal;
+            letter-spacing: 0;
+          }
+        }
+      }
     }
   }
 }

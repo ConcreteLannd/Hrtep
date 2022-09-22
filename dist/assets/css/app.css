@@ -482,7 +482,7 @@ a {
 
 .p-top .p-header {
   display: flex;
-  position: fixed;
+  position: absolute;
   top: 30px;
   align-items: center;
   justify-content: space-between;
@@ -535,7 +535,20 @@ a {
 }
 
 .p-top .section-title h2 {
+  position: relative;
   text-align: center;
+}
+
+.p-top .section-title h2::after {
+  position: absolute;
+  right: 0;
+  bottom: -10px;
+  left: 0;
+  width: 24px;
+  height: 5px;
+  margin: 0 auto;
+  background-color: #FF4141;
+  content: '';
 }
 
 .p-top .section-title h2 .ttl-en {
@@ -622,6 +635,178 @@ a {
   background-position: top;
   background-repeat: repeat;
   background-size: cover;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason_item {
+  max-width: 430px;
+  padding: 50px 23px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 0 9px #0000001f;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason_item:nth-child(2) .number-item {
+  padding: 18px 10px 19px;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason .number-item {
+  max-width: 138px;
+  margin: 0 auto;
+  margin-top: -119px;
+  padding: 23px 10px;
+  padding: 24px 2px 45px;
+  border-radius: 50%;
+  background-color: #FF4141;
+  color: #fff;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason .number-item .number {
+  font-family: futura-pt, sans-serif;
+  font-size: 28px;
+  font-size: 2.8rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.322;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason .number-item .text {
+  font-family: noto-sans-cjk-jp,sans-serif;
+  font-size: 32px;
+  font-size: 3.2rem;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason .number-item span {
+  display: block;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason .ctn-item .ttl-item {
+  padding: 24px 0 30px;
+  color: #FF4141;
+  font-size: 26px;
+  font-size: 2.6rem;
+  font-weight: bold;
+  line-height: 1.539;
+}
+
+.p-top .p-topMain .p-reasons .ctn-reason .ctn-item .description {
+  font-family: noto-sans-cjk-jp,sans-serif;
+  font-size: 22px;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.819;
+  text-align: left;
+}
+
+.p-top .p-topMain .p-flow {
+  padding: 100px 0 100px 54px;
+  background-color: #F5F5F5;
+  background-image: url(../images/bg_flow_pc.png);
+  background-position: top;
+  background-repeat: repeat;
+  background-size: cover;
+}
+
+.p-top .p-topMain .p-flow .thumb-flow {
+  text-align: center;
+}
+
+.p-top .p-topMain .p-flow .btn-flow {
+  display: flex;
+  justify-content: center;
+  padding-top: 55px;
+}
+
+.p-top .p-topMain .p-flow .btn-flow .btn01 {
+  margin-right: 65px;
+}
+
+.p-top .p-topMain .p-flow .btn-flow a {
+  display: block;
+}
+
+.p-top .p-topMain .p-feature {
+  padding: 100px 0 100px 54px;
+  background-color: #F5F5F5;
+  background-image: url(../images/bg_feature_pc.jpg);
+  background-position: top center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.p-top .p-topMain .p-feature .section-title h2 {
+  color: #fff;
+}
+
+.p-top .p-topMain .p-feature .section-title h2 .ttl-en {
+  color: #fff;
+}
+
+.p-top .p-topMain .p-feature .ctn-feature {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 100px;
+  text-align: center;
+}
+
+.p-top .p-topMain .p-feature .ctn-feature.ctn-feature02 {
+  justify-content: center;
+  padding-top: 72px;
+}
+
+.p-top .p-topMain .p-feature .ctn-feature.ctn-feature02 .ctn-feature_item:first-child {
+  margin-right: 38px;
+}
+
+.p-top .p-topMain .p-feature .ctn-feature_item {
+  max-width: 428px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 0 9px #0000001f;
+}
+
+.p-top .p-topMain .p-feature .ctn-feature_item:nth-child(2) .number-item {
+  padding: 18px 10px 19px;
+}
+
+.p-top .p-topMain .p-feature .ctn-feature .ctn-item {
+  padding: 45px 31px 35px 45px;
+}
+
+.p-top .p-topMain .p-feature .ctn-feature .ctn-item .ttl-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 116px;
+  padding: 0 0 36px;
+  color: #FF4141;
+  font-family: noto-sans-cjk-jp,sans-serif;
+  font-size: 26px;
+  font-size: 2.6rem;
+  font-weight: bold;
+  line-height: 1.539;
+}
+
+.p-top .p-topMain .p-feature .ctn-feature .ctn-item .description {
+  font-family: noto-sans-cjk-jp,sans-serif;
+  font-size: 22px;
+  font-size: 2.2rem;
+  font-style: normal;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.819;
+  text-align: left;
 }
 
 .u-alg_center {
