@@ -52,7 +52,26 @@
     }
   }
   
-
+  .section-title {
+    h2 {
+      text-align: center;
+      .ttl-en {
+        font-family: futura-pt, sans-serif;
+        font-weight: 500;
+        font-style: normal;
+        @include fs (64,85);
+        color: #2F2F2F;
+        .text-number {
+          color: #FF7272;
+        }
+      }
+      .ttl-ja {
+        display: block;
+        text-align: center;
+        @include fs(20,29);
+      }
+    }
+  }
 
 
   .p-topMain {
@@ -74,6 +93,44 @@
           margin-left: 38px;
         }
       }
+    }
+
+    .p-section {
+      max-width: 1467px;
+      width: 76.5vw;
+    }
+    .p-problems {
+      padding: 100px 0 100px 54px;
+      background: url(../images/bg_problems_pc.png);
+      background-position: top;
+      background-repeat: no-repeat;
+      background-size: cover;
+      .p-problem_ctn {
+      }
+      .problem-header {
+        text-align: center;
+        h2 {
+          color: #000000;
+          @include fs(32,43);
+          font-weight: bold;
+          span {
+            font-weight: bold;
+            color: #FF4141;
+          }
+        }
+      }
+      .thumb-proplems {
+        padding-top: 110px;
+      }
+    }
+
+    .p-reasons {
+      background-image: url(../images/bg_reason_pc.png);
+      background-color: #F5F5F5;
+      background-position: top;
+      background-repeat: repeat;
+      background-size: cover;
+      padding: 100px 0 100px 54px;
     }
   }
 }
