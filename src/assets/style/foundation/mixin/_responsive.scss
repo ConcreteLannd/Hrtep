@@ -4,6 +4,10 @@ $breakpoint_lp: (
   "lp": "screen and (max-width: #{$bp_lp_max_width+1}px)"
 ) !default;
 
+// max-width
+$breakpoint_pc: (
+  "pcm": "screen and (max-width: #{$bp_pc_max_width}px)"
+) !default;
 // min-width
 $breakpoint_up: (
   "pc": "screen and (max-width: #{$bp_pc_min_width}px)"
@@ -26,6 +30,11 @@ $breakpoint_downmp: (
 
 @mixin mq_up($breakpoint) {
   @media #{map-get($breakpoint_up, $breakpoint)} {
+    @content;
+  }
+}
+@mixin mq_pcm($breakpoint) {
+  @media #{map-get($breakpoint_pc, $breakpoint)} {
     @content;
   }
 }

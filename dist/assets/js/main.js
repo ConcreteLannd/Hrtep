@@ -1,31 +1,11 @@
 (function ($) {
     $('.voice-slider').slick({
-      centerMode: true,
-      centerPadding: '120px',
-      slidesToShow: 3,
+      infinite: true,
+      slidesToShow: 1,
+      slidesToScroll: 1,
       arrows: true,
-      dots: true,
-      prevArrow:"<button type='button' class='slick-prev pull-left'><img src='./assets/images/arrow-left.png' alt='left'></button>",
-      nextArrow:"<button type='button' class='slick-next pull-right'><img src='./assets/images/arrow-right.png' alt='right'></button>",
-      responsive: [
-        {
-          breakpoint: 1080,
-          settings: {
-            arrows: true,
-            centerMode: true,
-            centerPadding: '60px',
-            slidesToShow: 2
-          }
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            arrows: true,
-            centerMode: false,
-            slidesToShow: 1
-          }
-        }
-      ]
+      prevArrow:"<button type='button' class='slick-prev pull-left'><img src='./assets/images/arrow-left.svg' alt='left'></button>",
+      nextArrow:"<button type='button' class='slick-next pull-right'><img src='./assets/images/arrow-right.svg' alt='right'></button>",
     });
 
   })(jQuery)
@@ -87,4 +67,11 @@ $(function(){
   $(window).on('ready load resize', function() {
     matchHeight($match, 10);
   })
+});
+
+$('#nav_toggle').click(function(){
+  $("#nav_toggle").toggleClass('open');
+  $("nav").slideToggle(500);
+  $('.overlay').toggleClass('open');
+  $('body').toggleClass('fixed');
 });
