@@ -75,3 +75,12 @@ $('#nav_toggle').click(function(){
   $('.overlay').toggleClass('open');
   $('body').toggleClass('fixed');
 });
+
+// Anchor link smooth
+$(document).on('click', 'a[href^="#"]', function(event) {
+  event.preventDefault();
+  var offsetSize = $("header").innerHeight();
+  $('html, body').animate({
+      scrollTop: $($.attr(this, 'href')).offset().top
+  }, 900);
+});
