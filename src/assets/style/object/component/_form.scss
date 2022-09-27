@@ -1,0 +1,412 @@
+// --------------------------------
+// .c-form
+// --------------------------------
+.c-form {
+  position: relative;
+
+  &_row {
+    display: flex;
+
+    &.-col-2 {
+      justify-content: space-between;
+
+      .c-form_row_col {
+        width: calc(50% - 25px);
+      }
+
+      &_typeB {
+        .c-form_row_col {
+          width: calc(50% - 11px);
+        }
+      }
+    }
+
+    @include bp(tab) {
+      display: block;
+
+      &.-col-2 {
+        justify-content: flex-start;
+
+        .c-form_row_col {
+          width: 100%;
+          margin-bottom: 10px;
+        }
+
+        &_typeB {
+          .c-form_row_col {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  &_group {
+    &_label2 {
+      display: block;
+      font-size: 15px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    &_input2 {
+      flex: 1;
+    }
+  }
+}
+
+
+.c-form_group {
+  padding: 10px 20px
+}
+
+@media screen and (max-width: 568px) {
+  .c-form_group {
+    padding: 7px 10px;
+  }
+}
+
+.c-form_group_note {
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.59px;
+  color: #20448e;
+  margin-top: 10px;
+}
+
+.c-form select {
+  // -webkit-appearance: none;
+  // -moz-appearance: none;
+  // -o-appearance: none;
+  // appearance: none;
+  background-image: url("../images/icon/ic_select.svg");
+  background-repeat: no-repeat;
+  background-position: top 50% right 18px;
+  cursor: pointer;
+  padding-right: 50px;
+}
+
+.c-form select.wauto {
+  width: auto;
+}
+
+@include bp(tab) {
+  .c-form select {
+    background-size: 15px;
+    background-position: top 50% right 15px;
+    text-align: center;
+  }
+}
+
+.c-form .c-error,
+.c-form_group_input .c-error {
+  color: red;
+  font-size: 11px;
+  font-weight: normal;
+  display: block;
+  margin-top: 5px;
+}
+
+.c-formControl {
+  display: block;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 44px;
+  padding: 5px 20px;
+  border: 1px solid #EEE;
+  border-radius: 100px;
+  outline: none;
+  background: #EEE;
+  box-shadow: none;
+  color: #333;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+}
+
+.c-formControl:-webkit-autofill,
+.c-formControl:-webkit-autofill:hover,
+.c-formControl:-webkit-autofill:focus,
+.c-formControl:-webkit-autofill:active {
+  background: transparent !important;
+  -webkit-box-shadow: 0 0 0 100px white inset !important;
+  -webkit-text-fill-color: #707070 !important;
+}
+
+.c-formControl.c-error {
+  border: red 1px solid;
+  font-size: 14px;
+}
+
+@media screen and (max-width: 568px) {
+  .c-formControl {
+    font-size: 14px;
+  }
+}
+
+.c-formControl:focus {
+  box-shadow: none
+}
+
+.c-checkboxWrap {
+  display: flex;
+  // cursor: pointer;
+
+  .c-checkbox {
+    position: absolute;
+    opacity: 0;
+    -webkit-font-smoothing: antialiased;
+    resize: none;
+    cursor: pointer;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    & ~ .c-checkmark {
+      display: inline-block;
+      position: relative;
+      top: 3px;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      border: 1px solid #707070;
+      border-radius: 0;
+      background-color: #fff;
+      box-shadow: none;
+
+      &::after {
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 5px;
+        left: 0;
+        width: 8px;
+        height: 12px;
+        margin: auto;
+        transform: rotateZ(35deg);
+        border-right: 2px solid #fff;
+        border-bottom: 2px solid #fff;
+      }
+
+      @include bp(tab) {
+        margin-right: 10px;
+      }
+    }
+
+    &:checked {
+      & ~ .c-checkmark {
+        background-color: #1f53ad;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+
+    /* show error */
+    &.c-error {
+      & ~ .c-checkmark {
+        border-color: red;
+      }
+    }
+  }
+}
+
+.c-radioWrap {
+  display: flex;
+  // cursor: pointer;
+
+  .c-radio {
+    position: absolute;
+    opacity: 0;
+    -webkit-font-smoothing: antialiased;
+    resize: none;
+    cursor: pointer;
+    -ms-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+
+    & ~ .c-checkmark {
+      display: inline-block;
+      position: relative;
+      top: 2px;
+      width: 18px;
+      height: 18px;
+      margin-right: 10px;
+      border: 1px solid #1f53ad;
+      border-radius: 50%;
+      background-color: #fff;
+      box-shadow: none;
+
+      &::after {
+        content: '';
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 10px;
+        height: 10px;
+        margin: auto;
+        border: none;
+        border-radius: 50%;
+        background-color: #1f53ad;
+      }
+
+      @include bp(tab) {
+        margin-right: 10px;
+      }
+    }
+
+    &:checked {
+      & ~ .c-checkmark {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+
+        &::after {
+          display: block;
+        }
+      }
+    }
+
+    /* show error */
+    &.c-error {
+      & ~ .c-checkmark {
+        border-color: red;
+      }
+    }
+
+    &.is-custom {
+      display: inline-block;
+      position: relative;
+      top: 5px;
+      width: 26px;
+      height: 26px;
+      margin-right: 10px;
+      border: none;
+      border-radius: 50%;
+      background-color: #58cd00;
+      box-shadow: none;
+      -ms-appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      -o-appearance: none;
+      appearance: none;
+
+      &:checked {
+        &::after {
+          content: '';
+          display: none;
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          width: 10px;
+          height: 10px;
+          margin: auto;
+          border-radius: 50%;
+          background-color: #000;
+        }
+      }
+
+      &:checked {
+        & ~ .c-checkmark {
+          box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0 -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.1);
+
+          &::after {
+            display: block;
+          }
+        }
+      }
+
+    }
+  }
+}
+
+.c-selectCustom {
+  -ms-appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+.c-inputList li:not(:last-child) {
+  margin-bottom: 6px;
+}
+
+.c-inputList li label {
+  font-size: 16px;
+}
+
+.c-inputList li:nth-child(2n+1) {
+  padding-right: 10px;
+
+  @include bp(tab) {
+    padding-right: 0;
+  }
+}
+
+.c-inputList.-start {
+  align-items: flex-start;
+}
+
+.c-inputList.-center {
+  align-items: center;
+}
+
+.c-inputList.-listInline {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.c-inputList.-listInline li:not(:last-child) {
+  margin-right: 10px;
+}
+
+.c-inputList.-listCol {
+  width: 100%;
+
+  @include bp(pc) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+  }
+}
+
+.c-inputList.-listCol li {
+  margin-bottom: 20px;
+}
+
+.c-inputList.-listCol.-col-2 li {
+  @include bp(pc) {
+    width: 50%;
+  }
+}
+
+.c-inputList.-listCol.-col-3 li {
+  @include bp(pc) {
+    width: calc(100% / 3);
+  }
+}
+
+.c-inputList.-listRow {
+  display: block;
+}
+
+.c-inputList.-listRow li {
+  width: 100%;
+}
+
+.c-inputList.-listRow li:last-child {
+  margin-bottom: 0;
+}

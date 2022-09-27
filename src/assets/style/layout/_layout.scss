@@ -1,0 +1,40 @@
+.l-contents {
+  position: relative;
+  padding-top: 100px;
+  padding-bottom: 90px;
+
+  @include bp(tab) {
+    padding-top: 45px;
+    padding-bottom: 45px;
+  }
+}
+
+.l-content {
+  padding: 50px 50px;
+  border-radius: 45px;
+  box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.16);
+  background: #fff;
+
+  @include bp(tab) {
+    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.16);
+    padding: 15px 20px;
+    border-radius: 45px;
+  }
+}
+
+.l-container {
+  position: relative;
+  max-width: $container;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (max-width: 1000px) {
+    padding-right: $pc_page_content_side_padding;
+    padding-left: $pc_page_content_side_padding;
+  }
+
+  @include bp(tab) {
+    padding-right: $sp_page_content_side_padding;
+    padding-left: $sp_page_content_side_padding;
+  }
+}
