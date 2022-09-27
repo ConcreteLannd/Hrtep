@@ -1,0 +1,66 @@
+// --------------------------------
+// .c-button
+// --------------------------------
+.c-button {
+  display: flex;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  width: 310px;
+  height: 60px;
+  padding: 0;
+  border: none;
+  border-radius: 0;
+  background: #FF4141;
+  // box-shadow: 0 6px 5px 0 rgba(0, 0, 0, 0.16);
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+  outline: none;
+
+  span {
+    font-weight: bold;
+  }
+
+  &.-download {
+    span {
+      display: inline-block;
+
+      &:after {
+        content: "";
+        display: inline-block;
+        background: url(../images/icon/ic_download.svg) no-repeat center / 100%;
+        width: 16px;
+        height: 16px;
+        margin-left: 5px;
+        position: relative;
+        top: 1px;
+        // position: absolute;
+        // top: 50%;
+        // right: 10px;
+        // transform: translateY(-50%);
+      }
+    }
+
+    @include bp(tab) {
+      &:after {
+      }
+    }
+  }
+
+  &:hover {
+    opacity: 0.7;
+  }
+
+  @include bp(tab) {
+    width: 290px;
+  }
+
+  @include bp(sp) {
+    width: 100% !important;
+  }
+}

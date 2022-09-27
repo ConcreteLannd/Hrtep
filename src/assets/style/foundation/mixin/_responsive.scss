@@ -95,3 +95,100 @@ $breakpoint_downmp: (
 //     color: red;
 //   }
 // }
+
+@mixin bp($bp_1: 0, $bp_2: 0) {
+  $bp_subsp: 320;
+  $bp_main: 425;
+  $bp_sub: 768;
+
+  @if $bp_1=='tab' {
+    @media (max-width: #{$bp_sub}px) {
+      @content;
+    }
+  }
+
+  @else if $bp_1=='pc' {
+    @media (min-width: #{$bp_sub + 1}px) {
+      @content;
+    }
+  }
+
+  @else if $bp_1=='ls' {
+    @media (orientation: landscape) {
+      @content;
+    }
+  }
+
+  @else if $bp_1=='pt' {
+    @media (orientation: portrait) {
+      @content;
+    }
+  }
+
+  @elseif $bp_1=='ie11' {
+    @media all and (-ms-high-contrast: none) {
+      @content;
+    }
+  }
+
+  @else if $bp_1=='edge' {
+    @supports (-ms-ime-align: auto) {
+      @content;
+    }
+  }
+
+  @else {
+    @if $bp_1 !=0 and $bp_2 !=0 {
+      @media (min-width: $bp_1) and (max-width: $bp_2) {
+        @content;
+      }
+    }
+
+    @elseif $bp_1==0 {
+      @media (max-width: $bp_2) {
+        @content;
+      }
+    }
+
+    @elseif $bp_2==0 {
+      @media (min-width: $bp_1) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin clearfix {
+  &::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+@mixin auto() {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@mixin plr($px) {
+  padding-right: $px;
+  padding-left: $px;
+}
+
+@mixin mlr($px) {
+  margin-right: $px;
+  margin-left: $px;
+}
+
+@function cent($value, $container) {
+  @return ($value * 100%) / $container;
+}
+
+@mixin img_hover($opacity: 0.7, $transition: 0.3s) {
+  transition: $transition;
+
+  &:hover {
+    opacity: $opacity;
+  }
+}
