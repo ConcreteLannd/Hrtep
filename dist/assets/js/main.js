@@ -58,7 +58,7 @@
   });
   
 function coachingFaq() {
-  $('.p-itemfaq_question').click(function () {
+  $('.p-itemqa_question').click(function () {
     $(this).next().slideToggle(500)
     $(this).toggleClass('open')
   })
