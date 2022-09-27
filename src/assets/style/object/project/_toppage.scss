@@ -7,6 +7,11 @@
     width: 23.5vw;
     z-index: 999;
 
+    .ctn-form {
+      padding: 35px 22px;
+      background: #fff;
+    }
+
     @include mq_pcm(pcm) {
       display: none;
     }

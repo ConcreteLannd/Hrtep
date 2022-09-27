@@ -482,6 +482,11 @@ a {
   width: 23.5vw;
 }
 
+.p-top .form-right .ctn-form {
+  padding: 35px 22px;
+  background: #fff;
+}
+
 @media screen and (max-width: 1366px) {
   .p-top .form-right {
     display: none;
