@@ -3,13 +3,66 @@
   .form-right {
     position: fixed;
     top: 25px;
-    right: 0;
+    right: 15px;
     width: 23.5vw;
     z-index: 999;
+    .title-form {
+      width: 100%;
+    }
 
     .ctn-form {
       padding: 35px 22px;
       background: #fff;
+      margin-top: -30px;
+      box-shadow: 0 0 12px #000000;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
+
+      &_media {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 17px 5px 20px 23px;
+        border-radius: 12px;
+        background-color: #ecf3ff;
+        color: #1F53AD;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+
+        &_title {
+          &_main, &_sub {
+            display: block;
+          }
+    
+          &_main {
+            @include fs(20,24);
+            font-weight: bold;
+            letter-spacing: normal;
+            text-align: left;
+            color: #1f53ad;
+          }
+          &_sub {
+            @include fs(17,20);
+          }
+        }
+      }
+      .p-contact_form {
+        .w540per {
+          width: 100%;
+        }
+        .w370per, .w480per {
+          width: 100%;
+        }
+        .w50 {
+          width: 50%;
+        }
+      }
+      .c-form_group {
+        margin-bottom: 20px;
+      }
+      .c-form_acceptBox_accept {
+        justify-content: center;
+      }
     }
 
     @include mq_pcm(pcm) {

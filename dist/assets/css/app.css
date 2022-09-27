@@ -966,13 +966,73 @@ a {
   z-index: 999;
   position: fixed;
   top: 25px;
-  right: 0;
+  right: 15px;
   width: 23.5vw;
 }
 
+.p-top .form-right .title-form {
+  width: 100%;
+}
+
 .p-top .form-right .ctn-form {
+  margin-top: -30px;
   padding: 35px 22px;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   background: #fff;
+  box-shadow: 0 0 12px #000000;
+}
+
+.p-top .form-right .ctn-form_media {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 17px 5px 20px 23px;
+  border-radius: 12px;
+  background-color: #ecf3ff;
+  color: #1F53AD;
+}
+
+.p-top .form-right .ctn-form_media_title_main, .p-top .form-right .ctn-form_media_title_sub {
+  display: block;
+}
+
+.p-top .form-right .ctn-form_media_title_main {
+  color: #1f53ad;
+  font-size: 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  letter-spacing: normal;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.p-top .form-right .ctn-form_media_title_sub {
+  font-size: 17px;
+  font-size: 1.7rem;
+  line-height: 1.177;
+}
+
+.p-top .form-right .ctn-form .p-contact_form .w540per {
+  width: 100%;
+}
+
+.p-top .form-right .ctn-form .p-contact_form .w370per, .p-top .form-right .ctn-form .p-contact_form .w480per {
+  width: 100%;
+}
+
+.p-top .form-right .ctn-form .p-contact_form .w50 {
+  width: 50%;
+}
+
+.p-top .form-right .ctn-form .c-form_group {
+  margin-bottom: 20px;
+}
+
+.p-top .form-right .ctn-form .c-form_acceptBox_accept {
+  justify-content: center;
 }
 
 @media screen and (max-width: 1366px) {
