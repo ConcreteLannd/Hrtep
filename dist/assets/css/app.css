@@ -691,7 +691,7 @@ a {
 .c-formControl:-webkit-autofill:hover,
 .c-formControl:-webkit-autofill:focus,
 .c-formControl:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0 100px white inset !important;
+  -webkit-box-shadow: 0 0 0 100px #EEE inset !important;
   -webkit-text-fill-color: #707070 !important;
   background: transparent !important;
 }
@@ -967,7 +967,9 @@ a {
   position: fixed;
   top: 25px;
   right: 15px;
+  bottom: 10px;
   width: 23.5vw;
+  height: 100vh;
 }
 
 .p-top .form-right .title-form {
@@ -975,12 +977,12 @@ a {
 }
 
 .p-top .form-right .ctn-form {
+  height: 100%;
   margin-top: -30px;
-  padding: 35px 22px;
-  border-bottom-right-radius: 20px;
-  border-bottom-left-radius: 20px;
+  padding: 35px 20px 65px 22px;
+  overflow-x: auto;
   background: #fff;
-  box-shadow: 0 0 12px #000000;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
 }
 
 .p-top .form-right .ctn-form_media {
@@ -1035,7 +1037,11 @@ a {
   justify-content: center;
 }
 
-@media screen and (max-width: 1366px) {
+.p-top .form-right .ctn-form .p-contact .c-form_btnBox .c-button {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
   .p-top .form-right {
     display: none;
   }
@@ -1644,9 +1650,9 @@ a {
 
 @media screen and (max-width: 1140px) {
   .p-top .p-topMain .p-reasons .ctn-reason .ctn-item .description {
-    font-size: 18px;
-    font-size: 1.8rem;
-    line-height: 1.556;
+    font-size: 16px;
+    font-size: 1.6rem;
+    line-height: 1.75;
   }
 }
 
@@ -1870,7 +1876,7 @@ a {
 }
 
 .p-top .p-topMain .p-voice {
-  padding: 100px 0 100px 54px;
+  padding: 100px 0 0 54px;
   background-color: #fff;
   background-image: url(../images/bg-voice-left.png);
   background-position: -50px 100px;
@@ -2144,7 +2150,7 @@ a {
   position: relative;
   align-items: center;
   width: 100%;
-  padding: 19px 60px 11px 145px;
+  padding: 16px 60px 15px 145px;
 }
 
 @media screen and (max-width: 768px) {
@@ -2185,7 +2191,7 @@ a {
   font-size: 28px;
   font-size: 2.8rem;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 1.322;
   text-align: center;
 }
@@ -2196,11 +2202,19 @@ a {
   }
 }
 
+.p-top .p-topMain .p-qa .p-contentqa .p-itemqa_question.open p:after {
+  background-image: url(../images/qa_close.png);
+}
+
+.p-top .p-topMain .p-qa .p-contentqa .p-itemqa_answer {
+  display: none;
+}
+
 .p-top .p-topMain .p-qa .p-contentqa .p-itemqa_answer p {
-  padding: 10px 20px 0px 120px;
+  padding: 20px 20px 0px 120px;
   font-size: 20px;
   font-size: 2rem;
-  line-height: 2;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 768px) {
@@ -2213,12 +2227,12 @@ a {
 }
 
 .p-top .p-topMain .p-qa .p-contentqa .p-itemqa:nth-child(n+2) {
-  margin-top: 64px;
+  margin-top: 25px;
 }
 
 @media screen and (max-width: 768px) {
   .p-top .p-topMain .p-qa .p-contentqa .p-itemqa:nth-child(n+2) {
-    margin-top: 17px;
+    margin-top: 15px;
   }
 }
 

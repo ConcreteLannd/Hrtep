@@ -1,3 +1,47 @@
+<?php
+session_start();
+
+if($_POST) {
+  $company_name = isset( $_POST[ 'company_name' ] ) ? $_POST[ 'company_name' ] : NULL;
+  // $interested_str = implode(', ', $interested_name);
+  $name = isset( $_POST[ 'name' ] ) ? $_POST[ 'name' ] : NULL;
+  $address = isset( $_POST[ 'address' ] ) ? $_POST[ 'address' ] : NULL;
+  $phone = isset( $_POST[ 'phone' ] ) ? $_POST[ 'phone' ] : NULL;
+  $name_charge = isset( $_POST[ 'name_charge' ] ) ? $_POST[ 'name_charge' ] : NULL;
+  $email_charge = isset( $_POST[ 'email_charge' ] ) ? $_POST[ 'email_charge' ] : NULL;
+  $department_name = isset( $_POST[ 'department_name' ] ) ? $_POST[ 'department_name' ] : NULL;
+  $position = isset( $_POST[ 'position' ] ) ? $_POST[ 'position' ] : NULL;
+  $home_url = isset( $_POST[ 'home_url' ] ) ? $_POST[ 'home_url' ] : NULL;
+
+  $noti_receipt_number = isset( $_POST[ 'noti_receipt_number' ] ) ? $_POST[ 'noti_receipt_number' ] : NULL;
+  $registration_number = isset( $_POST[ 'registration_number' ] ) ? $_POST[ 'registration_number' ] : NULL;
+  $permission_number = isset( $_POST[ 'permission_number' ] ) ? $_POST[ 'permission_number' ] : NULL;
+
+  $license_registration = '';
+  $license_registration_arr = array();
+
+  foreach($_POST['license_registration_number'] as $value) {
+    if ($value == '職業紹介事業者') {
+      $license_registration1 = '<b>職業紹介事業者</b>' . '<br>' . $noti_receipt_number;
+    } else if ($value == '登録支援機関') {
+      $license_registration2 = '<b>登録支援機関</b>' . '<br>' . $registration_number;
+    } else {
+      $license_registration3 = '<b>監理団体</b>' . '<br>' . $permission_number;
+    }
+  }
+
+  $license_registration_arr = [$license_registration1, $license_registration2, $license_registration3];
+
+  $desired_registration_detail = isset( $_POST[ 'desired_registration_detail' ] ) ? $_POST[ 'desired_registration_detail' ] : NULL;
+  $desired_registration_detail_arr = implode(', ', $desired_registration_detail);
+}
+
+function h($string) {
+  global $encode;
+  return htmlspecialchars($string, ENT_QUOTES,$encode);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -83,20 +127,28 @@
                   <img src="./assets/images/contact_avatar.png" alt="まずは登録から">
                 </figure>
               </div>
-              <div class="c-hotlineBox -box1">
-                <p class="c-hotlineBox_text">Hrtepをご利用いただくため、<br class="u-spOnly">事前審査を実施しています。<br>
-                  以下項目に関してご記入ください。</p>
-                  <p class="c-hotlineBox_telNote">お電話からのお問い合わせ</p>
-                <p class="c-hotlineBox_tel"><span>0120-186-517</span></p>
-              </div>
               <section class="p-contactPage_formWrap p-contact">
-                <form method="POST" class="p-contact_form c-form" id="contactForm" name="contactForm" action="./confirm.php" enctype="multipart/form-data">
+                <form method="POST" class="p-contact_form c-form" id="contactForm" name="contactForm" action="./mail.php" enctype="multipart/form-data">
+                  <input type="hidden" name="企業名" value="<?php echo h($company_name); ?>">
+                  <input type="hidden" name="代表者名" value="<?php echo h($name); ?>">
+                  <input type="hidden" name="本社所在地" value="<?php echo h($address); ?>">
+                  <input type="hidden" name="ご連絡の付く電話番号" value="<?php echo h($phone); ?>">
+                  <input type="hidden" name="ご担当者名" value="<?php echo h($name_charge); ?>">
+                  <input type="hidden" name="ご担当者様メールアドレス" value="<?php echo h($email_charge); ?>">
+                  <input type="hidden" name="所属部署名" value="<?php echo h($department_name); ?>">
+                  <input type="hidden" name="役職" value="<?php echo h($position); ?>">
+                  <input type="hidden" name="ホームページURL" value="<?php echo h($home_url); ?>">
+                  <input type="hidden" name="各事業者の許可/登録番号をご記入ください。" value="">
+                  <input type="hidden" name="職業紹介事業者" value="<?php echo h($license_registration1); ?>">
+                  <input type="hidden" name="登録支援機関" value="<?php echo h($license_registration2); ?>">
+                  <input type="hidden" name="監理団体" value="<?php echo h($license_registration3); ?>">
+                  <input type="hidden" name="希望する登録内容をご記入ください。" value="<?php echo h($desired_registration_detail_arr); ?>">
                   <div class="c-form_group -first">
                     <div class="c-form_group_label">
                       <label>企業名</label> <span class="c-starReq">*</span>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="company_name" name="company_name" value="" placeholder="HRtep株式会社" class="c-formControl w480per">
+                      <p class="c-form_group_input_text"><?php echo h($company_name); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">
@@ -104,7 +156,7 @@
                       <label>代表者名</label> <span class="c-starReq">*</span>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="name" name="name" value="" placeholder="山田　太郎" class="c-formControl w480per">
+                      <p class="c-form_group_input_text"><?php echo h($name); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">
@@ -112,23 +164,15 @@
                       <label>本社所在地</label> <span class="c-starReq">*</span>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="address" name="address" value="" placeholder="東京都中央区銀座1-16-7　銀座大栄ビル" class="c-formControl w480per w100perSP">
+                      <p class="c-form_group_input_text"><?php echo h($address); ?></p>
                     </div>
                   </div>
-                  <!-- <div class="c-form_group">
-                    <div class="c-form_group_label">
-                      <label>メールアドレス</label> <span class="c-starReq">*</span>
-                    </div>
-                    <div class="c-form_group_input">
-                      <input type="text" id="email" name="email" value="" placeholder="taro.yamada@aaa.bbb" class="c-formControl w320per">
-                    </div>
-                  </div> -->
                   <div class="c-form_group">
                     <div class="c-form_group_label">
                       <label>ご連絡の付く電話番号</label> <span class="c-starReq">*</span>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="phone" name="phone" value="" placeholder="03-4360-8666" class="c-formControl w320per w100perSP">
+                      <p class="c-form_group_input_text"><?php echo h($phone); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">
@@ -136,7 +180,7 @@
                       <label>ご担当者名</label> <span class="c-starReq">*</span>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="name_charge" name="name_charge" value="" placeholder="山田　太郎" class="c-formControl w360per w100perSP">
+                      <p class="c-form_group_input_text"><?php echo h($name_charge); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">
@@ -144,7 +188,7 @@
                       <label>ご担当者様メールアドレス</label> <span class="c-starReq">*</span>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="email_charge" name="email_charge" value="" placeholder="taro.yamada@aaa.bbb" class="c-formControl w360per w100perSP">
+                      <p class="c-form_group_input_text"><?php echo h($email_charge); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">
@@ -152,7 +196,7 @@
                       <label>所属部署名</label>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="department_name" name="department_name" value="" placeholder="営業企画課" class="c-formControl w480per">
+                      <p class="c-form_group_input_text"><?php echo h($department_name); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">
@@ -160,7 +204,7 @@
                       <label>役職</label>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="position" name="position" value="" placeholder="係長" class="c-formControl w480per w100perSP">
+                      <p class="c-form_group_input_text"><?php echo h($position); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">
@@ -168,7 +212,7 @@
                       <label>ホームページURL</label>
                     </div>
                     <div class="c-form_group_input">
-                      <input type="text" id="home_url" name="home_url" value="" placeholder="https://www.hrtep.com/" class="c-formControl w480per w100perSP">
+                      <p class="c-form_group_input_text"><?php echo h($home_url); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">
@@ -177,45 +221,11 @@
                     </div>
                     <div class="c-form_group_input">
                       <div class="c-licenseNumber">
-                        <ul class="c-licenseNumber_item">
-                          <li><label class="c-checkboxWrap"><input type="checkbox" id="" name="license_registration_number[]" value="職業紹介事業者" class="c-checkbox"><span class="c-checkmark"></span><span class="c-text"> 職業紹介事業者</span></label></li>
-                          <li>
-                            <div class="c-form_group">
-                              <div class="c-form_group_label">
-                                <label>許可・届出受理番号</label>
-                              </div>
-                              <div class="c-form_group_input">
-                                <input type="text" id="noti_receipt_number" name="noti_receipt_number" value="" placeholder="" class="c-formControl w360per w100perSP">
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                        <ul class="c-licenseNumber_item">
-                          <li><label class="c-checkboxWrap"><input type="checkbox" id="" name="license_registration_number[]" value="登録支援機関" class="c-checkbox"><span class="c-checkmark"></span><span class="c-text"> 登録支援機関</span></label></li>
-                          <li>
-                            <div class="c-form_group">
-                              <div class="c-form_group_label">
-                                <label>登録番号</label>
-                              </div>
-                              <div class="c-form_group_input">
-                                <input type="text" id="registration_number" name="registration_number" value="" placeholder="" class="c-formControl w360per w100perSP">
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
-                        <ul class="c-licenseNumber_item">
-                          <li><label class="c-checkboxWrap"><input type="checkbox" id="" name="license_registration_number[]" value="監理団体" class="c-checkbox"><span class="c-checkmark"></span><span class="c-text"> 監理団体</span></label></li>
-                          <li>
-                            <div class="c-form_group">
-                              <div class="c-form_group_label">
-                                <label>許可番号</label>
-                              </div>
-                              <div class="c-form_group_input">
-                                <input type="text" id="permission_number" name="permission_number" value="" placeholder="" class="c-formControl w360per w100perSP">
-                              </div>
-                            </div>
-                          </li>
-                        </ul>
+                        <?php
+                        foreach ($license_registration_arr as $item) {
+                          echo '<li>' . $item . '</li>';
+                        }
+                        ?>
                       </div>
                     </div>
                   </div>
@@ -224,30 +234,7 @@
                       <label>希望する登録内容をご記入ください。</label>
                     </div>
                     <div class="c-form_group_input">
-                      <ul class="c-inputList -listRow">
-                        <li><label class="c-checkboxWrap"><input type="checkbox" id="" name="desired_registration_detail[]" value="求人を掲載したい" class="c-checkbox"><span class="c-checkmark"></span><span class="c-text">求人を掲載したい</span></label></li>
-                        <li><label class="c-checkboxWrap"><input type="checkbox" id="" name="desired_registration_detail[]" value="求職者を掲載したい" class="c-checkbox"><span class="c-checkmark"></span><span class="c-text">求職者を掲載したい</span></label></li>
-                        <li><label class="c-checkboxWrap"><input type="checkbox" id="" name="desired_registration_detail[]" value="どちらも" class="c-checkbox"><span class="c-checkmark"></span><span class="c-text">どちらも</span></label></li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="c-form_group">
-                    <div class="c-form_group_label">
-                      <label>個人情報のお取り扱いについて</label>
-                    </div>
-                    <div class="c-form_group_input">
-                      <div class="c-form_privacy jc_scrollbar">
-                        <div class="c-form_privacy_body">
-                          ＨＲｔｅｐ株式会社（以下「当社」といいます。）は、お客様の個人情報保護の重要性について認識し、個人情報の保護に関する法律以下「個人情報保護
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="c-form_acceptBox c-form_group">
-                    <div class="c-form_group_input">
-                      <p class="c-form_acceptBox_accept">
-                        <label class="c-checkboxWrap"><input type="checkbox" id="access" name="access" value="" class="c-checkbox"><span class="c-checkmark"></span><span class="c-text">同意する <small class="c-starReq">*</small></span></label>
-                      </p>
+                      <p class="c-form_group_input_text"><?php echo h($desired_registration_detail_arr); ?></p>
                     </div>
                   </div>
                   <div class="c-form_btnBox c-form_group -last">

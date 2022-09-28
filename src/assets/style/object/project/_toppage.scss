@@ -3,20 +3,26 @@
   .form-right {
     position: fixed;
     top: 25px;
+    bottom: 10px;
     right: 15px;
     width: 23.5vw;
+    height: 100vh;
     z-index: 999;
+
     .title-form {
       width: 100%;
     }
 
     .ctn-form {
-      padding: 35px 22px;
+      padding: 35px 20px 65px 22px;
       background: #fff;
       margin-top: -30px;
-      box-shadow: 0 0 12px #000000;
-      border-bottom-left-radius: 20px;
-      border-bottom-right-radius: 20px;
+      box-shadow: 0 0 12px rgba(#000, 0.16);
+      height: 100%;
+      // border-bottom-left-radius: 20px;
+      // border-bottom-right-radius: 20px;
+      overflow-x: auto;
+
 
       &_media {
         margin-top: 20px;
@@ -46,6 +52,7 @@
           }
         }
       }
+      
       .p-contact_form {
         .w540per {
           width: 100%;
@@ -63,9 +70,21 @@
       .c-form_acceptBox_accept {
         justify-content: center;
       }
+
+      .p-contact .c-form {
+        &_btnBox {
+          .c-button {
+            width: 100%;
+          }
+        }
+      }
     }
 
     @include mq_pcm(pcm) {
+      // display: none;
+    }
+
+    @include bp(tab) {
       display: none;
     }
   }
@@ -489,7 +508,7 @@
             font-style: normal;
             letter-spacing: 0;
             @include mq_up(pc) {
-              @include fs(18,28);
+              @include fs(16,28);
             }
           }
         }
@@ -665,7 +684,7 @@
 
     .p-voice {
       background-color: #fff;
-      padding: 100px 0 100px 54px;
+      padding: 100px 0 0 54px;
       background-image: url(../images/bg-voice-left.png);
       background-repeat: no-repeat;
       background-position: -50px 100px;
@@ -869,7 +888,7 @@
             p {
               display: flex;
               width: 100%;
-              padding: 19px 60px 11px 145px;
+              padding: 16px 60px 15px 145px;
               position: relative;
               align-items: center;
               @include mq_down(sp) {
@@ -897,7 +916,7 @@
               font-family: futura-pt, sans-serif;
               @include fs(28,37);
               font-style: normal;
-              font-weight: 500;
+              font-weight: 300;
               min-width: 109px;
               text-align: center;
               margin-right: 15px;
@@ -913,12 +932,22 @@
                 display: none;
               }
             }
+
+            &.open {
+              p {
+                &:after {
+                  background-image: url(../images/qa_close.png);
+                }
+              }
+            }
           }
 
           &_answer {
+            display: none;
+
             p {
-              padding: 10px 20px 0px 120px;
-              @include fs(20,40);
+              padding: 20px 20px 0px 120px;
+              @include fs(20,30);
 
               @include mq_down(sp) {
                 @include fs(17,30);
@@ -928,9 +957,9 @@
           }
 
           &:nth-child(n+2) {
-            margin-top: 64px;
+            margin-top: 25px;
             @include mq_down(sp) {
-              margin-top: 17px;
+              margin-top: 15px;
             }
           }
         }
