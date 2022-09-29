@@ -22,11 +22,11 @@ if($_POST) {
 
   foreach($_POST['license_registration_number'] as $value) {
     if ($value == '職業紹介事業者') {
-      $license_registration1 = "許可番号:" . $noti_receipt_number;
+      $license_registration1 = "職業紹介事業者 - 許可番号:" . $noti_receipt_number;
     } else if ($value == '登録支援機関') {
-      $license_registration2 = "許可番号:" . $registration_number;
+      $license_registration2 = "登録支援機関 - 許可番号:" . $registration_number;
     } else {
-      $license_registration3 = "許可番号:" . $permission_number;
+      $license_registration3 = "監理団体 - 許可番号:" . $permission_number;
     }
   }
 
@@ -94,16 +94,16 @@ function h($string) {
       </div>
       <ul class="p-header_menu u-pc">
         <li>
-          <a href="#flow">マッチングの流れ</a>
+          <a href="./#flow">マッチングの流れ</a>
         </li>
         <li>
-          <a href="#feature">機能の特徴</a>
+          <a href="./#feature">機能の特徴</a>
         </li>
         <li>
-          <a href="#voice">お客様の声</a>
+          <a href="./#voice">お客様の声</a>
         </li>
         <li>
-          <a href="#service">付属サービス</a>
+          <a href="./#service">付属サービス</a>
         </li>
       </ul>
       <div class="p-header_contact u-pc">
@@ -125,16 +125,16 @@ function h($string) {
         <nav class="menu-sp">
           <ul>
             <li>
-              <a href="#flow">マッチングの流れ</a>
+              <a href="./#flow">マッチングの流れ</a>
             </li>
             <li>
-              <a href="#feature">機能の特徴</a>
+              <a href="./#feature">機能の特徴</a>
             </li>
             <li>
-              <a href="#voice">お客様の声</a>
+              <a href="./#voice">お客様の声</a>
             </li>
             <li>
-              <a href="#service">付属サービス</a>
+              <a href="./#service">付属サービス</a>
             </li>
             <li>
               <a href="./contact.html">資料請求はこちら</a>
