@@ -9,6 +9,13 @@
     height: 100vh;
     z-index: 999;
     max-width: 431px;
+    @include mq_pcm(pcm) {
+      top: 105px;
+    }
+
+    @include mq_up(pc) {
+      top: 85px;
+    }
 
     .title-form {
       width: 100%;
@@ -37,9 +44,16 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
+        @include mq_pcm(pcm) {
+          display: block;
+        }
 
         &_title {
           width: 70%;
+          
+          @include mq_pcm(pcm) {
+            width: 100%;
+          }
           &_main, &_sub {
             display: block;
           }
@@ -50,14 +64,27 @@
             letter-spacing: normal;
             text-align: left;
             color: #1f53ad;
+            @include mq_pcm(pcm) {
+              @include fs(17,20);
+            }
           }
           &_sub {
             @include fs(17,20);
+            @include mq_pcm(pcm) {
+              @include fs(14,18);
+            }
           }
         }
         &_image {
           width: 30%;
           max-width: 109px;
+          
+          @include mq_pcm(pcm) {
+            width: 100%;
+            text-align: center;
+            max-width: 100%;
+            margin-top: 10px;
+          }
         }
       }
       
@@ -83,21 +110,25 @@
         &_btnBox {
           .c-button {
             width: 100%;
+            @include mq_pcm(pcm) {
+              font-size: 12px;
+            }
           }
         }
       }
       .c-button {
         &.-download {
           span:after {
+            top: 3px;
             background: url(../images/ic_right.svg) no-repeat center/100%;
           }
         }
       }
     }
 
-    @include mq_pcm(pcm) {
-      display: none;
-    }
+    // @include mq_pcm(pcm) {
+    //   display: none;
+    // }
 
     @include bp(tab) {
       display: none;
@@ -338,7 +369,8 @@
         margin-left: 115px;
         width: 70vw;
         @include mq_pcm(pcm) {
-          width: 80%;
+          width: 67vw;
+          margin-left: 5vw;
         }
         @include mq_down(sp) {
           width: 100%;
@@ -357,7 +389,8 @@
         display: flex;
         width: 62vw;
         @include mq_pcm(pcm) {
-          width: 80%;
+          width: 67vw;
+          margin-left: 5vw;
         }
         @include mq_down(sp) {
           width: 100%;
@@ -390,10 +423,11 @@
     .p-section {
       max-width: 1467px;
       width: 76.5vw;
-      @include mq_lpm(lpm) {
-        width: 75.5vw;
-      }
+      
       @include mq_pcm(pcm) {
+        width: 72vw;
+      }
+      @include mq_down(sp) {
         width: 100%;
       }
     }
@@ -477,6 +511,9 @@
           padding: 50px 23px;
           box-shadow: 0 0 9px #0000001f;
           margin: 0 18px;
+          @include mq_pcm(pcm) {
+            margin: 0 10px;
+          }
           &:nth-child(2) {
             .number-item {
               padding: 18px 10px 19px;
@@ -497,12 +534,14 @@
           color: #fff;
           border-radius: 50%;
           max-width: 138px;
+          height: 138px;
           margin: 0 auto;
           margin-top: -119px;
           padding: 24px 2px 45px;
 
           @include mq-down(sp) {
             max-width: 98px;
+            height: 98px;
             margin-top: -99px;
             padding: 18px 2px 29px;
           }
@@ -953,6 +992,9 @@
                 background: url(../images/qa_close.png) center no-repeat;
                 background-size: cover;
                 content: '';
+                @include mq_down(sp) {
+                  right: 10px;
+                }
             }
             }
             span {
@@ -1035,8 +1077,11 @@
         border-radius: 25px;
         margin: 66px auto 0;
         background: #fff;
-        padding: 136px 48px 78px 190px;
+        padding: 136px 48px 78px 10vw;
         width: 81%;
+        @include mq_up(pc) {
+          padding: 136px 2vw 78px 2vw;
+        }
         @include mq_down(sp) {
           width: 100%;
           padding: 0;

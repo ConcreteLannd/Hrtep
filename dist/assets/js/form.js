@@ -4,6 +4,7 @@ jQuery(function() {
   var $form = $('#contactForm');
   $.validator.messages.required = "※必須項目です";
   $.validator.messages.email = "※正しいメールアドレスを入力してください";
+  $.validator.messages.phone = "※正しいメールアドレスを入力してください";
 
 
   $form.validate({
@@ -41,8 +42,8 @@ jQuery(function() {
   });
 
   // download form validate
-  var downloadForm = $('#downloadForm');
-  downloadForm.validate({
+  var $downloadForm = $('#downloadForm');
+  $downloadForm.validate({
     errorClass: 'c-error',
     errorPlacement: function (error, element) {
       if (element.attr('name') == 'interested_name[]') {
@@ -70,8 +71,8 @@ jQuery(function() {
 
     messages: {
     },
-    submitHandler: function (downloadForm) {
-      $form.submit();
+    submitHandler: function ($downloadForm) {
+      $downloadForm.submit();
     },
   });
 
