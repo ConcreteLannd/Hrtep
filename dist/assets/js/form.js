@@ -41,8 +41,8 @@ jQuery(function() {
   });
 
   // download form validate
-  var downloadForm = $('#downloadForm');
-  downloadForm.validate({
+  var $downloadForm = $('#downloadForm');
+  $downloadForm.validate({
     errorClass: 'c-error',
     errorPlacement: function (error, element) {
       if (element.attr('name') == 'interested_name[]') {
@@ -70,8 +70,8 @@ jQuery(function() {
 
     messages: {
     },
-    submitHandler: function (downloadForm) {
-      $form.submit();
+    submitHandler: function ($downloadForm) {
+      $downloadForm.submit();
     },
   });
 

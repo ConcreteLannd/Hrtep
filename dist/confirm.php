@@ -22,11 +22,11 @@ if($_POST) {
 
   foreach($_POST['license_registration_number'] as $value) {
     if ($value == '職業紹介事業者') {
-      $license_registration1 = "許可番号:" . $noti_receipt_number;
+      $license_registration1 = "職業紹介事業者 - 許可番号:" . $noti_receipt_number;
     } else if ($value == '登録支援機関') {
-      $license_registration2 = "許可番号:" . $registration_number;
+      $license_registration2 = "登録支援機関 - 許可番号:" . $registration_number;
     } else {
-      $license_registration3 = "許可番号:" . $permission_number;
+      $license_registration3 = "監理団体 - 許可番号:" . $permission_number;
     }
   }
 
