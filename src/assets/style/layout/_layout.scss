@@ -16,9 +16,9 @@
   background: #fff;
 
   @include bp(tab) {
-    box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.16);
-    padding: 15px 20px;
-    border-radius: 45px;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.16);
+    padding: 20px 15px;
+    border-radius: 20px;
   }
 }
 
