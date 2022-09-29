@@ -76,6 +76,13 @@ $('#nav_toggle').click(function(){
   $('body').toggleClass('fixed');
 });
 
+$('.menu-sp a').click(function(){
+  $("#nav_toggle").toggleClass('open');
+  $("nav").slideToggle(500);
+  $('.overlay').toggleClass('open');
+  $('body').toggleClass('fixed');
+});
+
 // Anchor link smooth
 $(document).on('click', 'a[href^="#"]', function(event) {
   event.preventDefault();
