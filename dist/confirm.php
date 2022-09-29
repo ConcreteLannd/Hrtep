@@ -8,7 +8,7 @@ if($_POST) {
   $address = isset( $_POST[ 'address' ] ) ? $_POST[ 'address' ] : NULL;
   $phone = isset( $_POST[ 'phone' ] ) ? $_POST[ 'phone' ] : NULL;
   $name_charge = isset( $_POST[ 'name_charge' ] ) ? $_POST[ 'name_charge' ] : NULL;
-  $email_charge = isset( $_POST[ 'email_charge' ] ) ? $_POST[ 'email_charge' ] : NULL;
+  $email = isset( $_POST[ 'email' ] ) ? $_POST[ 'email' ] : NULL;
   $department_name = isset( $_POST[ 'department_name' ] ) ? $_POST[ 'department_name' ] : NULL;
   $position = isset( $_POST[ 'position' ] ) ? $_POST[ 'position' ] : NULL;
   $home_url = isset( $_POST[ 'home_url' ] ) ? $_POST[ 'home_url' ] : NULL;
@@ -22,11 +22,11 @@ if($_POST) {
 
   foreach($_POST['license_registration_number'] as $value) {
     if ($value == '職業紹介事業者') {
-      $license_registration1 = '<b>職業紹介事業者</b>' . '<br>' . $noti_receipt_number;
+      $license_registration1 = "許可番号:" . $noti_receipt_number;
     } else if ($value == '登録支援機関') {
-      $license_registration2 = '<b>登録支援機関</b>' . '<br>' . $registration_number;
+      $license_registration2 = "許可番号:" . $registration_number;
     } else {
-      $license_registration3 = '<b>監理団体</b>' . '<br>' . $permission_number;
+      $license_registration3 = "許可番号:" . $permission_number;
     }
   }
 
@@ -88,29 +88,78 @@ function h($string) {
 
 <body>
   <div class="p-top">
-    <header class="p-header">
+  <header class="p-header">
       <div class="p-header_logo">
         <a href="./"><img src="./assets/images/logo.svg" alt="外構工事ならガーデンワークス"></a>
       </div>
-      <ul class="p-header_menu">
+      <ul class="p-header_menu u-pc">
         <li>
-          <a href="#">マッチングの流れ</a>
+          <a href="#flow">マッチングの流れ</a>
         </li>
         <li>
-          <a href="#">機能の特徴</a>
+          <a href="#feature">機能の特徴</a>
         </li>
         <li>
-          <a href="#">お客様の声</a>
+          <a href="#voice">お客様の声</a>
         </li>
         <li>
-          <a href="#">付属サービス</a>
+          <a href="#service">付属サービス</a>
         </li>
       </ul>
-      <div class="p-header_contact">
+      <div class="p-header_contact u-pc">
         <p>新規導入に関するお問合せ</p>
         <p class="phone-number">
           <a href="tel:+0120-186-517"><img src="./assets/images/icon_phone.svg" alt="0120-186-517">0120-186-517</a>
         </p>
+      </div>
+
+      <div class="right-header u-sp">
+        <a href="tel:+0120-186-517"><img class="phone-header_sp" src="./assets/images/icon_phone.svg" alt="0120-186-517"></a>
+        <div id="nav_toggle">
+          <div>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+        <nav class="menu-sp">
+          <ul>
+            <li>
+              <a href="#flow">マッチングの流れ</a>
+            </li>
+            <li>
+              <a href="#feature">機能の特徴</a>
+            </li>
+            <li>
+              <a href="#voice">お客様の声</a>
+            </li>
+            <li>
+              <a href="#service">付属サービス</a>
+            </li>
+            <li>
+              <a href="./contact.html">資料請求はこちら</a>
+            </li>
+            <li>
+              <a href="./download-form.html">求人・求職者登録申し込みはコチラ</a>
+            </li>
+          </ul>
+
+          <p class="contact">
+            <a href="tel:+0120-186-517"><img src="./assets/images/call-sp.png" alt="0120-186-517"></a>
+          </p>
+
+          <div class="button-form">
+            <a class="btn_call u-sp" href="tel:+0120-186-517">
+              <img class="rimg" src="./assets/images/btn-call.png" alt="tel">
+            </a>
+            <a class="btn01" href="./download-form.html">
+              <img class="rimg" src="./assets/images/btn-form01_pc.png" alt="contact">
+            </a>
+            <a class="btn02" href="./contact.html">
+              <img class="rimg" src="./assets/images/btn-form02_pc.png" alt="contact">
+            </a>
+          </div>
+        </nav>
       </div>
     </header>
     <main class="p-pageMain">
@@ -134,7 +183,7 @@ function h($string) {
                   <input type="hidden" name="本社所在地" value="<?php echo h($address); ?>">
                   <input type="hidden" name="ご連絡の付く電話番号" value="<?php echo h($phone); ?>">
                   <input type="hidden" name="ご担当者名" value="<?php echo h($name_charge); ?>">
-                  <input type="hidden" name="ご担当者様メールアドレス" value="<?php echo h($email_charge); ?>">
+                  <input type="hidden" name="ご担当者様メールアドレス" value="<?php echo h($email); ?>">
                   <input type="hidden" name="所属部署名" value="<?php echo h($department_name); ?>">
                   <input type="hidden" name="役職" value="<?php echo h($position); ?>">
                   <input type="hidden" name="ホームページURL" value="<?php echo h($home_url); ?>">
@@ -240,7 +289,7 @@ function h($string) {
                   <div class="c-form_btnBox c-form_group -last">
                     <div class="c-form_group_label"></div>
                     <div class="c-form_group_input">
-                      <button type="submit" class="c-form_btnBox_btn c-button" id="submitForm" name="submitForm">入力内容を確認する</button>
+                      <button type="submit" class="c-form_btnBox_btn c-button" id="submitForm" name="submitForm">送信</button>
                     </div>
                   </div>
                 </form>

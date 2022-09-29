@@ -34,16 +34,16 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) {//PHP5.1.0以上の場合の�
 $site_top = "/";
 
 //管理者のメールアドレス ※メールを受け取るメールアドレス(複数指定する場合は「,」で区切ってください 例 $to = "aa@aa.aa,bb@bb.bb";)
-$to = "wakayama-h@dym.jp";
-// $to = "quangtk@concrete-corp.com";
+// $to = "wakayama-h@dym.jp";
+$to = "quangtk@concrete-corp.com";
 
 //自動返信メールの送信元メールアドレス
 //必ず実在するメールアドレスでかつ出来る限り設置先サイトのドメインと同じドメインのメールアドレスとすることを強く推奨します
-$from = "wakayama-h@dym.jp";
-// $from = "quangtk@concrete-corp.com";
+// $from = "wakayama-h@dym.jp";
+$from = "quangtk@concrete-corp.com";
 
 //フォームのメールアドレス入力箇所のname属性の値（name="○○"　の○○部分）
-$Email = "メールアドレス";
+$Email = "ご担当者様メールアドレス";
 //---------------------------　必須設定　ここまで　------------------------------------
 
 
@@ -194,8 +194,15 @@ if(isset($_POST)) {
   $postData["役職"] = $_POST["役職"];
   $postData["ホームページURL"] = $_POST["ホームページURL"];
   $postData["各事業者の許可/登録番号をご記入ください。"] = '';
-  $postData["職業紹介事業者"] = $_POST["職業紹介事業者"];
-  $postData["登録支援機関"] = $_POST["登録支援機関"];
+  if ( $_POST["職業紹介事業者"] != NULL && isset($_POST["職業紹介事業者"])) {
+	$postData["職業紹介事業者"] = $_POST["職業紹介事業者"];
+  }
+  if ( $_POST["登録支援機関"] != NULL && isset($_POST["登録支援機関"])) {
+	$postData["登録支援機関"] = $_POST["登録支援機関"];
+  }
+  if ( $_POST["監理団体"] != NULL && isset($_POST["監理団体"])) {
+	$postData["監理団体"] = $_POST["監理団体"];
+  }
   $postData["監理団体"] = $_POST["監理団体"];
   $postData["希望する登録内容をご記入ください。"] = $_POST["希望する登録内容をご記入ください。"];
   $_POST = $postData;
