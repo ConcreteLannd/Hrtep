@@ -980,7 +980,7 @@ a {
   border-bottom-right-radius: 20px;
   border-bottom-left-radius: 20px;
   background: #fff;
-  box-shadow: 0 0 12px #000000;
+  box-shadow: 0 0 12px #707070;
 }
 
 .p-top .form-right .ctn-form_media {
@@ -1376,7 +1376,7 @@ a {
 
 .p-top .p-topMain .p-mainVisual_btn {
   display: flex;
-  width: 70vw;
+  width: 62vw;
   margin-top: 45px;
   margin-left: 133px;
 }

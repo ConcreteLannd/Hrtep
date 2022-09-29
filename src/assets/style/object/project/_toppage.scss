@@ -14,7 +14,7 @@
       padding: 35px 22px;
       background: #fff;
       margin-top: -30px;
-      box-shadow: 0 0 12px #000000;
+      box-shadow: 0 0 12px #707070;
       border-bottom-left-radius: 20px;
       border-bottom-right-radius: 20px;
 
@@ -299,7 +299,7 @@
         margin-top: 45px;
         margin-left: 133px;
         display: flex;
-        width: 70vw;
+        width: 62vw;
         @include mq_pcm(pcm) {
           width: 80%;
         }
