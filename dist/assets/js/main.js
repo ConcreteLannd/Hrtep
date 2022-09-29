@@ -63,7 +63,7 @@ function matchHeight($o, m) {
 }
 $(function(){
   // var $match = $('.p-table_tbody_tr').find('.td_height');
-  var $match = $('.l-voiceSlider .slick-track').find('.voice-item');
+  var $match = $('.ctn-voice').find('.ctn-voice_item');
   $(window).on('ready load resize', function() {
     matchHeight($match, 10);
   })

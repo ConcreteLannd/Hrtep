@@ -1,3 +1,7 @@
+// 1820
+$breakpoint_lpm: (
+  "lpm": "screen and (max-width: #{$bp_lpm_max_width+1}px)"
+) !default;
 
 // min-width
 $breakpoint_lp: (
@@ -39,6 +43,11 @@ $breakpoint_downmp: (
   }
 }
 
+@mixin mq_lpm($breakpoint) {
+  @media #{map-get($breakpoint_lpm, $breakpoint)} {
+    @content;
+  }
+}
 @mixin mq_lp($breakpoint) {
   @media #{map-get($breakpoint_lp, $breakpoint)} {
     @content;

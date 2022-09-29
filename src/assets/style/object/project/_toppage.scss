@@ -8,13 +8,19 @@
     width: 23.5vw;
     height: 100vh;
     z-index: 999;
+    max-width: 431px;
+    @include mq_lpm(lpm) {
+      top: 105px;
+    }
 
     .title-form {
       width: 100%;
+      z-index: 99;
+      position: relative;
     }
 
     .ctn-form {
-      padding: 35px 20px 65px 22px;
+      padding: 15px 7px 100px 22px;
       background: #fff;
       margin-top: -30px;
       box-shadow: 0 0 12px rgba(#000, 0.16);
@@ -22,20 +28,24 @@
       // border-bottom-left-radius: 20px;
       // border-bottom-right-radius: 20px;
       overflow-x: auto;
+      @include mq_lpm(lpm) {
+       padding-bottom: 180px;
+      }
 
 
       &_media {
         margin-top: 20px;
         margin-bottom: 20px;
-        padding: 17px 5px 20px 23px;
+        padding: 17px 10px 20px 15px;
         border-radius: 12px;
         background-color: #ecf3ff;
         color: #1F53AD;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         &_title {
+          width: 70%;
           &_main, &_sub {
             display: block;
           }
@@ -50,6 +60,10 @@
           &_sub {
             @include fs(17,20);
           }
+        }
+        &_image {
+          width: 30%;
+          max-width: 109px;
         }
       }
       
@@ -78,10 +92,17 @@
           }
         }
       }
+      .c-button {
+        &.-download {
+          span:after {
+            background: url(../images/ic_right.svg) no-repeat center/100%;
+          }
+        }
+      }
     }
 
     @include mq_pcm(pcm) {
-      // display: none;
+      display: none;
     }
 
     @include bp(tab) {
@@ -89,7 +110,7 @@
     }
   }
   .p-header {
-    position: absolute;
+    position: fixed;
     top: 30px;
     background: #fff;
     max-width: 1346px;
@@ -100,7 +121,11 @@
     justify-content: space-between;
     align-items: center;
     padding: 2px 66px 3px 35px;
+    z-index: 9999;
 
+    @include mq_lp(lp) {
+      margin-left: 20px;
+    }
     @include mq_pcm(pcm) {
       padding: 2px 20px 3px 20px;
     }
@@ -358,14 +383,14 @@
       }
     }
     .p-problems {
-      padding: 100px 0 100px 54px;
+      padding: 100px 0 100px 2.815vw;
       background: url(../images/bg_problems_pc.png);
       background-position: top;
       background-repeat: no-repeat;
       background-size: cover;
 
       @include mq_pcm(pcm) {
-        padding-right: 54px;
+        padding-left: 2.815vw;
       }
 
       @include mq_down(sp) {
@@ -402,14 +427,17 @@
       background-position: top;
       background-repeat: repeat;
       background-size: cover;
-      padding: 100px 0 100px 54px;
+      padding: 100px 0 100px 2.815vw;
 
       @include mq_pcm(pcm) {
-        padding-right: 54px;
+        padding-left: 2.815vw;
       }
       @include mq-down(sp) {
         padding: 50px 10px 50px;
         margin-top: -10px;
+        background-image: url(../images/bg_reason_sp.png);
+        background-repeat: repeat;
+        background-size: cover;
       }
 
       .ctn-reason {
@@ -521,10 +549,10 @@
       background-position: top;
       background-repeat: repeat;
       background-size: cover;
-      padding: 100px 0 100px 54px;
+      padding: 100px 0 100px 2.815vw;
 
       @include mq_pcm(pcm) {
-        padding-right: 54px;
+        padding-left: 2.815vw;
       }
 
       @include mq-down(sp) {
@@ -565,10 +593,10 @@
       background-position: top center;
       background-repeat: no-repeat;
       background-size: contain;
-      padding: 100px 0 100px 54px;
+      padding: 100px 0 100px 2.815vw;
 
       @include mq_pcm(pcm) {
-        padding-right: 54px;
+        padding-left: 2.815vw;
       }
       @include mq_down(sp) {
         padding: 11px 12px 50px;
@@ -625,6 +653,7 @@
           border-radius: 15px;
           box-shadow: 0 0 9px #0000001f;
           margin: 0 19px;
+          width: 32%;
           @include mq_down(sp) {
            max-width: 100%;
            width: 100%;
@@ -691,7 +720,7 @@
       background-size: contain;
 
       @include mq_pcm(pcm) {
-        padding-right: 54px;
+        padding-left: 2.815vw;
       }
 
       @include mq_down(sp) {
@@ -709,7 +738,7 @@
 
         @include mq_down(sp) {
           display: block;
-          padding: 45px 21px 17px;
+          padding: 45px 21px 0;
         }
 
         &_item {
@@ -773,7 +802,8 @@
             justify-content: center;
 
             @include mq_down(sp) {
-              @include fs(20,24)
+              @include fs(20,24);
+              padding-bottom: 15px;
             }
           }
           .description {
@@ -797,8 +827,9 @@
         color: #707070;
 
         @include mq_down(sp) {
-          margin-top: 0;
+          margin-top: 10px;
           @include fs(13,16);
+          text-align: left;
         }
       }
     }
@@ -809,9 +840,11 @@
       position: relative;
 
       @include mq_pcm(pcm) {
-        padding-right: 54px;
+        padding-left: 2.815vw;
       }
-
+      @include mq_down(sp) {
+        padding: 0 12px 50px;
+      }
       &::before {
         content: '';
         width: 1350.35px;
@@ -864,7 +897,7 @@
 
     .p-qa {
       background-color: #F5FDFF;
-      padding: 100px 0 100px 54px;
+      padding: 100px 0 100px 2.815vw;
 
       @include mq_down(sp) {
         padding: 50px 12px 50px;
@@ -975,7 +1008,7 @@
       padding: 50px 0 117px 54px;
 
       @include mq_pcm(pcm) {
-        padding-right: 54px;
+        padding-left: 2.815vw;
       }
       @include mq_down(sp) {
         padding: 50px 15px 40px 15px;
@@ -1001,7 +1034,8 @@
               margin-bottom: 0;
             }
             @include mq_down(sp) {
-              margin-top: 20px;
+              margin-top: 10px;
+              margin-bottom: 10px;
             }
             &:last-child {
               td {
@@ -1019,6 +1053,7 @@
               display: block;
               @include fs(17,40);
               text-align: center;
+              letter-spacing: 0;
             }
             span {
               display: block;
