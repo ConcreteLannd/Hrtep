@@ -4,6 +4,7 @@ jQuery(function() {
   var $form = $('#contactForm');
   $.validator.messages.required = "※必須項目です";
   $.validator.messages.email = "※正しいメールアドレスを入力してください";
+  $.validator.messages.phone = "※正しいメールアドレスを入力してください";
 
 
   $form.validate({

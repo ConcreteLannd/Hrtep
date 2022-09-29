@@ -94,16 +94,16 @@ function h($string) {
       </div>
       <ul class="p-header_menu u-pc">
         <li>
-          <a href="#flow">マッチングの流れ</a>
+          <a href="./#flow">マッチングの流れ</a>
         </li>
         <li>
-          <a href="#feature">機能の特徴</a>
+          <a href="./#feature">機能の特徴</a>
         </li>
         <li>
-          <a href="#voice">お客様の声</a>
+          <a href="./#voice">お客様の声</a>
         </li>
         <li>
-          <a href="#service">付属サービス</a>
+          <a href="./#service">付属サービス</a>
         </li>
       </ul>
       <div class="p-header_contact u-pc">
@@ -125,16 +125,16 @@ function h($string) {
         <nav class="menu-sp">
           <ul>
             <li>
-              <a href="#flow">マッチングの流れ</a>
+              <a href="./#flow">マッチングの流れ</a>
             </li>
             <li>
-              <a href="#feature">機能の特徴</a>
+              <a href="./#feature">機能の特徴</a>
             </li>
             <li>
-              <a href="#voice">お客様の声</a>
+              <a href="./#voice">お客様の声</a>
             </li>
             <li>
-              <a href="#service">付属サービス</a>
+              <a href="./#service">付属サービス</a>
             </li>
             <li>
               <a href="./contact.html">資料請求はこちら</a>

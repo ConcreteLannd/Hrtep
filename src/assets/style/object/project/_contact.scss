@@ -11,6 +11,7 @@ body:not(.home) {
       border-radius: 0;
       top: auto;
       max-width: 100%;
+      width: 100%;
     }
   
     .p-footer {
@@ -227,6 +228,10 @@ body:not(.home) {
       &_label {
         position: relative;
         margin-bottom: 10px;
+
+        small {
+          font-size: 80%;
+        }
 
         label {
           // white-space: nowrap;
