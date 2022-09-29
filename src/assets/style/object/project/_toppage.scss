@@ -9,9 +9,6 @@
     height: 100vh;
     z-index: 999;
     max-width: 431px;
-    @include mq_lpm(lpm) {
-      top: 105px;
-    }
 
     .title-form {
       width: 100%;
@@ -20,7 +17,7 @@
     }
 
     .ctn-form {
-      padding: 15px 7px 100px 22px;
+      padding: 15px 7px 85px 22px;
       background: #fff;
       margin-top: -30px;
       box-shadow: 0 0 12px rgba(#000, 0.16);
@@ -28,9 +25,6 @@
       // border-bottom-left-radius: 20px;
       // border-bottom-right-radius: 20px;
       overflow-x: auto;
-      @include mq_lpm(lpm) {
-       padding-bottom: 180px;
-      }
 
 
       &_media {
@@ -114,7 +108,7 @@
     top: 30px;
     background: #fff;
     max-width: 1346px;
-    width: 100%;
+    width: 70.2vw;
     border-radius: 40px;
     margin-left: 80px;
     display: flex;
@@ -122,10 +116,14 @@
     align-items: center;
     padding: 2px 66px 3px 35px;
     z-index: 9999;
-
+    @include mq_lpm(lpm) {
+      padding: 2px 20px 3px 20px;
+      width: 72.2vw;
+    }
     @include mq_lp(lp) {
       margin-left: 20px;
     }
+
     @include mq_pcm(pcm) {
       padding: 2px 20px 3px 20px;
     }
@@ -143,6 +141,9 @@
     }
 
     &_logo {
+      @include mq_lpm(lpm) {
+        width: 18.5vw;
+      }
       @include mq_tab(tab) {
         width: 150px;
       }
@@ -159,6 +160,10 @@
         @include fs(20,27);
         font-weight: bold;
         color: #707070;
+        @include mq_lpm(lpm) {
+          font-size: 1.1vw;
+          line-height: 1.42;
+        }
         @include mq_pcm(pcm) {
           @include fs(17,24);
         }
@@ -177,6 +182,10 @@
       @include fs(18,24);
       color: #707070;
 
+      @include mq_lpm(lpm) {
+        @include fs(14,22);
+      }
+
       @include mq_pcm(pcm) {
         @include fs(16,22);
       }
@@ -192,6 +201,9 @@
           font-weight: 500;
           font-style: normal;
           display: flex;
+          @include mq_lpm(lpm) {
+            @include fs(22,41);
+          }
 
           @include mq_pcm(pcm) {
             @include fs(28,41);
@@ -202,7 +214,7 @@
           img {
             margin-top: 5px;
             margin-right: 13px;
-            @include mq_pcm(pcm) {
+            @include mq_lpm(lpm) {
               width: 20px;
             }
           }
@@ -906,8 +918,10 @@
       .p-contentqa {
         max-width: 810px;
         margin: 0 auto;
-          margin-top: 100px;
-
+        margin-top: 100px;
+        @include mq_down(sp) {
+          margin-top: 50px;
+        }
         .p-itemqa {
           &_question {
             background-color: #6DCEE8;
@@ -933,7 +947,7 @@
                 right: 25px;
                 width: 16px;
                 height: 16px;
-                background: url(../images/qa_open.svg) center no-repeat;
+                background: url(../images/qa_close.png) center no-repeat;
                 background-size: cover;
                 content: '';
             }
@@ -969,7 +983,7 @@
             &.open {
               p {
                 &:after {
-                  background-image: url(../images/qa_close.png);
+                  background-image: url(../images/qa_open.svg);
                 }
               }
             }
@@ -1024,6 +1038,7 @@
           width: 100%;
           padding: 0;
           background: none;
+          margin-top: 40px;
         }
 
         table {

@@ -973,12 +973,6 @@ a {
   height: 100vh;
 }
 
-@media screen and (max-width: 1821px) {
-  .p-top .form-right {
-    top: 105px;
-  }
-}
-
 .p-top .form-right .title-form {
   z-index: 99;
   position: relative;
@@ -988,16 +982,10 @@ a {
 .p-top .form-right .ctn-form {
   height: 100%;
   margin-top: -30px;
-  padding: 15px 7px 100px 22px;
+  padding: 15px 7px 85px 22px;
   overflow-x: auto;
   background: #fff;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
-}
-
-@media screen and (max-width: 1821px) {
-  .p-top .form-right .ctn-form {
-    padding-bottom: 180px;
-  }
 }
 
 .p-top .form-right .ctn-form_media {
@@ -1088,12 +1076,19 @@ a {
   top: 30px;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
+  width: 70.2vw;
   max-width: 1346px;
   margin-left: 80px;
   padding: 2px 66px 3px 35px;
   border-radius: 40px;
   background: #fff;
+}
+
+@media screen and (max-width: 1821px) {
+  .p-top .p-header {
+    width: 72.2vw;
+    padding: 2px 20px 3px 20px;
+  }
 }
 
 @media screen and (max-width: 1601px) {
@@ -1124,6 +1119,12 @@ a {
   }
 }
 
+@media screen and (max-width: 1821px) {
+  .p-top .p-header_logo {
+    width: 18.5vw;
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .p-top .p-header_logo {
     width: 150px;
@@ -1149,6 +1150,13 @@ a {
   font-size: 2rem;
   font-weight: bold;
   line-height: 1.35;
+}
+
+@media screen and (max-width: 1821px) {
+  .p-top .p-header_menu a {
+    font-size: 1.1vw;
+    line-height: 1.42;
+  }
 }
 
 @media screen and (max-width: 1366px) {
@@ -1185,6 +1193,14 @@ a {
   text-align: center;
 }
 
+@media screen and (max-width: 1821px) {
+  .p-top .p-header_contact {
+    font-size: 14px;
+    font-size: 1.4rem;
+    line-height: 1.572;
+  }
+}
+
 @media screen and (max-width: 1366px) {
   .p-top .p-header_contact {
     font-size: 16px;
@@ -1212,6 +1228,14 @@ a {
   line-height: 1.343;
 }
 
+@media screen and (max-width: 1821px) {
+  .p-top .p-header_contact .phone-number a {
+    font-size: 22px;
+    font-size: 2.2rem;
+    line-height: 1.864;
+  }
+}
+
 @media screen and (max-width: 1366px) {
   .p-top .p-header_contact .phone-number a {
     font-size: 28px;
@@ -1233,7 +1257,7 @@ a {
   margin-right: 13px;
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1821px) {
   .p-top .p-header_contact .phone-number a img {
     width: 20px;
   }
@@ -2180,6 +2204,12 @@ a {
   margin-top: 100px;
 }
 
+@media screen and (max-width: 768px) {
+  .p-top .p-topMain .p-qa .p-contentqa {
+    margin-top: 50px;
+  }
+}
+
 .p-top .p-topMain .p-qa .p-contentqa .p-itemqa_question {
   display: flex;
   align-items: center;
@@ -2218,7 +2248,7 @@ a {
   right: 25px;
   width: 16px;
   height: 16px;
-  background: url(../images/qa_open.svg) center no-repeat;
+  background: url(../images/qa_close.png) center no-repeat;
   background-size: cover;
   content: '';
 }
@@ -2256,7 +2286,7 @@ a {
 }
 
 .p-top .p-topMain .p-qa .p-contentqa .p-itemqa_question.open p:after {
-  background-image: url(../images/qa_close.png);
+  background-image: url(../images/qa_open.svg);
 }
 
 .p-top .p-topMain .p-qa .p-contentqa .p-itemqa_answer {
@@ -2322,6 +2352,7 @@ a {
 @media screen and (max-width: 768px) {
   .p-top .p-topMain .p-company .ctn-company {
     width: 100%;
+    margin-top: 40px;
     padding: 0;
     background: none;
   }
