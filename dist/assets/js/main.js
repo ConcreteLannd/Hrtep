@@ -91,3 +91,23 @@ $(document).on('click', 'a[href^="#"]', function(event) {
       scrollTop: $($.attr(this, 'href')).offset().top
   }, 900);
 });
+
+$(function () {
+  var sticky = $('.sticky_btn');
+  var hieghtThreshold = $("#problems").offset().top + 100 ;
+  var hieghtThreshold_end = $("#footer").offset().top + 4500;
+  $(window).scroll(function () {
+    var w = window.innerWidth;
+    var bp = 768;
+    if (w < bp) {
+      var scroll = $(window).scrollTop();
+    } else if (w >= bp) {
+      var scroll = $(window).scrollTop();
+    }
+    if (scroll >= hieghtThreshold && scroll <= hieghtThreshold_end) {
+      sticky.addClass('fixed');
+    } else {
+      sticky.removeClass('fixed');
+    }
+  });
+})

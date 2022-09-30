@@ -59,20 +59,14 @@
           }
     
           &_main {
-            @include fs(20,24);
+            @include fs(15,20);
             font-weight: bold;
             letter-spacing: normal;
             text-align: left;
             color: #1f53ad;
-            @include mq_pcm(pcm) {
-              @include fs(17,20);
-            }
           }
           &_sub {
-            @include fs(17,20);
-            @include mq_pcm(pcm) {
-              @include fs(14,18);
-            }
+            @include fs(12,16);
           }
         }
         &_image {
@@ -149,7 +143,7 @@
     z-index: 9999;
     @include mq_lpm(lpm) {
       padding: 2px 20px 3px 20px;
-      width: 72.2vw;
+      width: 71vw;
     }
     @include mq_lp(lp) {
       margin-left: 20px;
@@ -388,6 +382,7 @@
         margin-left: 133px;
         display: flex;
         width: 62vw;
+       
         @include mq_pcm(pcm) {
           width: 67vw;
           margin-left: 5vw;
@@ -397,6 +392,8 @@
           margin: 0;
           padding: 8px 10px 10px 10px;
           justify-content: space-between;
+          background-color: #fff;
+          z-index: 99;
         }
 
         .btn01 {
@@ -994,6 +991,7 @@
                 content: '';
                 @include mq_down(sp) {
                   right: 10px;
+                  top: 40%;
                 }
             }
             }
@@ -1082,6 +1080,9 @@
         @include mq_up(pc) {
           padding: 136px 2vw 78px 2vw;
         }
+        @include mq_tab(tab) {
+          width: 90%;
+        }
         @include mq_down(sp) {
           width: 100%;
           padding: 0;
@@ -1090,6 +1091,9 @@
         }
 
         table {
+          @include mq_down(sp) {
+            width: 100%;
+          }
           tr {
             margin-bottom: 30px;
             display: block;
@@ -1126,9 +1130,15 @@
               text-align: center;
               color: #fff;
               @include fs(20,40);
+              @include mq_tab(tab) {
+                min-width: 155px;
+              }
             }
             &:last-child {
               padding-left: 65px;
+              @include mq_tab(tab) {
+                padding-left: 30px;
+              }
               @include mq_down(sp) {
                 padding: 0;
               }
@@ -1138,10 +1148,31 @@
       }
     }
   }
-
+  .sticky_btn {
+    display: none;
+    @include mq_down(sp) {
+      &.fixed {
+        position: fixed;
+        display: flex!important;
+        bottom: 0;
+        padding: 5px;
+        z-index: 99;
+        a {
+          display: block;
+          padding: 0 5px;
+        }
+      }
+    }
+  }
   .p-footer {
     background-color: #1F53AD;
     text-align: center;
+    // @include mq_down(sp) {
+    //   margin-bottom: 160px;
+    // }
+    // @include mq_mb(mb) {
+    //   margin-bottom: 90px;
+    // }
     .p-footer_copyright {
       max-width: 1467px;
       width: 100%;

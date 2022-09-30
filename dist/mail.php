@@ -624,7 +624,7 @@ function userHeader($refrom_name,$to,$encode){
 //ユーザ宛送信メールボディ
 function mailToUser($arr,$dsp_name,$remail_text,$mailFooterDsp,$mailSignature,$encode){
   $userBody = '';
-	$userBody="この度は、資料請求のお申し込みをいただきまして、誠にありがとうございます。\n下記内容にてフォームを送信いたしました。\n\n";
+	$userBody="無料登録ありがとうございました。\n以下の内容にて無料登録が完了いたしました。\n\n";
 
 	$userBody.="このメールは自動返信機能によって送信されております。";
 
