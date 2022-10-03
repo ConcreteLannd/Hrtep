@@ -111,3 +111,13 @@ $(function () {
     }
   });
 })
+
+$(window).scroll(function() {    
+  var scroll = $(window).scrollTop();
+
+  if (scroll >= 100) {
+      $(".p-header").addClass("fixedHeader");
+  } else {
+      $(".p-header").removeClass("fixedHeader");
+  }
+});

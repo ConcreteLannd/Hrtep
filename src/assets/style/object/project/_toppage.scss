@@ -4,7 +4,7 @@
     position: fixed;
     top: 25px;
     bottom: 10px;
-    right: 0;
+    right: 15px;
     width: 23.5vw;
     height: 100vh;
     z-index: 999;
@@ -15,6 +15,7 @@
 
     @include mq_up(pc) {
       top: 85px;
+      right: 10px;
     }
 
     .title-form {
@@ -24,19 +25,21 @@
     }
 
     .ctn-form {
-      padding: 15px 7px 85px 22px;
+      padding: 15px 7px 5px 22px;
       background: #fff;
       margin-top: -30px;
       box-shadow: 0 0 12px rgba(#000, 0.16);
-      height: 100%;
-      // border-bottom-left-radius: 20px;
-      // border-bottom-right-radius: 20px;
+      height: 88%;
+      border-bottom-left-radius: 20px;
+      border-bottom-right-radius: 20px;
       overflow-x: auto;
-
+      @include mq_pcm(pcm) {
+        padding-bottom: 50px;
+      }
 
       &_media {
         margin-top: 20px;
-        margin-bottom: 20px;
+        margin-bottom: 10px;
         padding: 17px 10px 20px 15px;
         border-radius: 12px;
         background-color: #ecf3ff;
@@ -94,7 +97,10 @@
         }
       }
       .c-form_group {
-        margin-bottom: 20px;
+        margin-bottom: 10px;
+        &_label{
+          margin-bottom: 5px;
+        }
       }
       .c-form_acceptBox_accept {
         justify-content: center;
@@ -141,6 +147,10 @@
     align-items: center;
     padding: 2px 66px 3px 35px;
     z-index: 9999;
+    transition: all 0.5s;
+    &.fixedHeader {
+      top: 0;
+    }
     @include mq_lpm(lpm) {
       padding: 2px 20px 3px 20px;
       width: 71vw;
@@ -887,7 +897,7 @@
 
     .p-service {
       background-color: #fff;
-      padding: 50px 0 50px 54px;
+      padding: 65px 0 50px 54px;
       position: relative;
 
       @include mq_pcm(pcm) {

@@ -22,15 +22,18 @@ if($_POST) {
 
   foreach($_POST['license_registration_number'] as $value) {
     if ($value == '職業紹介事業者') {
-      $license_registration1 = "職業紹介事業者 - 許可番号:" . $noti_receipt_number;
+      $license_registration1 = "許可番号:" . $noti_receipt_number;
+      $license_registration1_show = "職業紹介事業者<br>　許可番号: " . $noti_receipt_number;
     } else if ($value == '登録支援機関') {
-      $license_registration2 = "登録支援機関 - 許可番号:" . $registration_number;
+      $license_registration2 = "許可番号:" . $registration_number;
+      $license_registration2_show = "登録支援機関<br>　許可番号: " . $registration_number;
     } else {
-      $license_registration3 = "監理団体 - 許可番号:" . $permission_number;
+      $license_registration3 = "許可番号:" . $permission_number;
+      $license_registration3_show = "監理団体<br>　許可番号: " . $permission_number;
     }
   }
 
-  $license_registration_arr = [$license_registration1, $license_registration2, $license_registration3];
+  $license_registration_arr = [$license_registration1_show, $license_registration2_show, $license_registration3_show];
 
   $desired_registration_detail = isset( $_POST[ 'desired_registration_detail' ] ) ? $_POST[ 'desired_registration_detail' ] : NULL;
   $desired_registration_detail_arr = implode(', ', $desired_registration_detail);
@@ -237,7 +240,7 @@ function h($string) {
                       <label>ご担当者様メールアドレス</label> <span class="c-starReq">*</span>
                     </div>
                     <div class="c-form_group_input">
-                      <p class="c-form_group_input_text"><?php echo h($email_charge); ?></p>
+                      <p class="c-form_group_input_text"><?php echo h($email); ?></p>
                     </div>
                   </div>
                   <div class="c-form_group">

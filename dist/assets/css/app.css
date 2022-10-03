@@ -966,7 +966,7 @@ a {
   z-index: 999;
   position: fixed;
   top: 25px;
-  right: 0;
+  right: 15px;
   bottom: 10px;
   width: 23.5vw;
   max-width: 431px;
@@ -982,6 +982,7 @@ a {
 @media screen and (max-width: 1140px) {
   .p-top .form-right {
     top: 85px;
+    right: 10px;
   }
 }
 
@@ -992,12 +993,20 @@ a {
 }
 
 .p-top .form-right .ctn-form {
-  height: 100%;
+  height: 88%;
   margin-top: -30px;
-  padding: 15px 7px 85px 22px;
+  padding: 15px 7px 5px 22px;
   overflow-x: auto;
+  border-bottom-right-radius: 20px;
+  border-bottom-left-radius: 20px;
   background: #fff;
   box-shadow: 0 0 12px rgba(0, 0, 0, 0.16);
+}
+
+@media screen and (max-width: 1366px) {
+  .p-top .form-right .ctn-form {
+    padding-bottom: 50px;
+  }
 }
 
 .p-top .form-right .ctn-form_media {
@@ -1005,7 +1014,7 @@ a {
   align-items: center;
   justify-content: space-between;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   padding: 17px 10px 20px 15px;
   border-radius: 12px;
   background-color: #ecf3ff;
@@ -1075,7 +1084,11 @@ a {
 }
 
 .p-top .form-right .ctn-form .c-form_group {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+}
+
+.p-top .form-right .ctn-form .c-form_group_label {
+  margin-bottom: 5px;
 }
 
 .p-top .form-right .ctn-form .c-form_acceptBox_accept {
@@ -1116,6 +1129,11 @@ a {
   padding: 2px 66px 3px 35px;
   border-radius: 40px;
   background: #fff;
+  transition: all 0.5s;
+}
+
+.p-top .p-header.fixedHeader {
+  top: 0;
 }
 
 @media screen and (max-width: 1821px) {
@@ -2161,7 +2179,7 @@ a {
 
 .p-top .p-topMain .p-service {
   position: relative;
-  padding: 50px 0 50px 54px;
+  padding: 65px 0 50px 54px;
   background-color: #fff;
 }
 

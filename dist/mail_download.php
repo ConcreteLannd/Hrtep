@@ -34,12 +34,12 @@ if (version_compare(PHP_VERSION, '5.1.0', '>=')) {//PHP5.1.0以上の場合の�
 $site_top = "/";
 
 //管理者のメールアドレス ※メールを受け取るメールアドレス(複数指定する場合は「,」で区切ってください 例 $to = "aa@aa.aa,bb@bb.bb";)
-$to = "wakayama-h@dym.jp";
-// $to = "quangtk@concrete-corp.com";
+$to = "customer-service@hrtep.com,itani-s@dym.jp,wakayama-h@dym.jp,motoyama-s@dym.jp,sonoda-h@dym.jp";
+// $to = "lannd@concrete-corp.com";
 
 //自動返信メールの送信元メールアドレス
 //必ず実在するメールアドレスでかつ出来る限り設置先サイトのドメインと同じドメインのメールアドレスとすることを強く推奨します
-$from = "wakayama-h@dym.jp";
+$from = "customer-service@hrtep.com";
 // $from = "quangtk@concrete-corp.com";
 
 //フォームのメールアドレス入力箇所のname属性の値（name="○○"　の○○部分）
@@ -608,7 +608,7 @@ function userHeader($refrom_name,$to,$encode){
 //ユーザ宛送信メールボディ
 function mailToUser($arr,$dsp_name,$remail_text,$mailFooterDsp,$mailSignature,$encode){
   $userBody = '';
-  	$userBody="無料登録ありがとうございました。\n以下の内容にて無料登録が完了いたしました。\n\n";
+  	$userBody="この度は、資料請求のお申し込みをいただきまして、誠にありがとうございます。\n下記内容にてフォームを送信いたしました。\n\n";
 
 	$userBody.="このメールは自動返信機能によって送信されております。";
 
