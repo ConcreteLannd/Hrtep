@@ -508,7 +508,7 @@ body:not(.home) {
 
         &_sub {
           font-size: 19px;
-          list-height: 1.5;
+          line-height: 1.5;
         }
       }
     }
@@ -520,6 +520,8 @@ body:not(.home) {
     background-color: #ecf3ff;
     margin-top: 20px;
     margin-bottom: 40px;
+    max-width: 480px;
+    margin: 0 auto;
 
     @include bp(tab) {
       padding: 15px 10px;
@@ -596,7 +598,7 @@ body:not(.home) {
     }
 
     @include bp(tab) {
-      margin-bottom: 30px;
+      margin-bottom: 20px;
     }
 
     &_title {
@@ -613,6 +615,11 @@ body:not(.home) {
       &_sub {
         font-size: 24px;
         line-height: 1.8;
+        color: #1f53ad;
+        font-size: 29px;
+        font-weight: bold;
+        letter-spacing: normal;
+        text-align: center;
       }
 
       @include bp(tab) {
@@ -630,15 +637,37 @@ body:not(.home) {
 
     &_image {
       @include bp(pc) {
-        margin-left: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 480px;
+        margin-right: auto;
+        margin-bottom: 30px;
+        margin-left: auto;
+        padding-right: 65px;
+        padding-left: 35px;
       }
       @include bp(tab) {
-        margin-top: 15px;
+        max-width: 480px;
+        margin-bottom: 15px;
         text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 0 auto;
       }
 
       img {
-        max-width: 334px;
+        max-width: 234px;
+        margin-left: 20px;
+        @include bp(tab) {
+          width: 99px;
+          margin-left: 0;
+          margin-right: 20px;
+        }
+        @include bp(sp2) {
+          width: 88px;
+        }
       }
     }
   }
@@ -721,6 +750,7 @@ body:not(.home) {
       @include bp(tab) {
         text-align: center;
         width: 99px;
+        margin-right: 20px;
 
         @include bp(sp2) {
           width: 88px;
